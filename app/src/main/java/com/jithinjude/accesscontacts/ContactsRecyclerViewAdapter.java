@@ -11,12 +11,12 @@ import java.util.ArrayList;
 public class ContactsRecyclerViewAdapter extends RecyclerView.Adapter<ContactsRecyclerViewHolder> {
 
     Context context;
-    ArrayList <Contacts> contactsList;
+    ArrayList <Contacts> contactList;
     private LayoutInflater layoutInflater;
 
     ContactsRecyclerViewAdapter(Context context, ArrayList<Contacts> contactsList){
         this.context = context;
-        this.contactsList = contactsList;
+        this.contactList = contactsList;
         layoutInflater = LayoutInflater.from(context);
     }
 
@@ -28,7 +28,7 @@ public class ContactsRecyclerViewAdapter extends RecyclerView.Adapter<ContactsRe
 
     @Override
     public void onBindViewHolder(ContactsRecyclerViewHolder holder, int pos) {
-        holder.name.setText(contactsList.get(pos).getName());
+        holder.name.setText(contactList.get(pos).getName());
 
         holder.setItemClickListener(new ContactsRecyclerViewClickListener() {
             @Override
@@ -39,6 +39,6 @@ public class ContactsRecyclerViewAdapter extends RecyclerView.Adapter<ContactsRe
     // total number of rows
     @Override
     public int getItemCount() {
-        return contactsList.size();
+        return contactList.size();
     }
 }
